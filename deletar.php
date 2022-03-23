@@ -8,13 +8,16 @@ if(!empty($_GET['IDPROD'])){
         
         $result = $connection->query($sqlSelect);
       
-        $sqlSelect = "SELECT * FROM produtos,preco WHERE IDPROD = '$id'";
+        $sqlSelect = "SELECT * FROM `produtos`
+        INNER JOIN `preco` ON `produtos`.`IDPROD` = `preco`.`IDPRECO`
+        WHERE `IDPROD` = `$id`";
     
         $resultSelect = $connection->query($sqlSelect);
     
     if($resp->num_rows > 0) {
     
-        $sqlDelete = "DELETE FROM produtos WHERE IDPROD = '$id'";
+        $sqlDelete = "DELETE FROM `produtos`
+        INNER JOIN `preco` ON `produtos`.`IDPROD` = `preco`.`IDPRECO` WHERE IDPROD = `$id`";
         $resultDelete = $connection->query($sqlDelete);
         
     }

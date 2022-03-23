@@ -1,11 +1,13 @@
 <?php
 
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpassword = '';
-$dbname = 'testephp-mysql';
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'testephp-mysql';
 
-$connection = new mysqli($dbhost,$dbuser,$dbpassword,$dbname);
+ 
+
+$connection = new mysqli($host, $user, $password, $database);
 
 /*Caso queira testar conexão use o código abaixo 
 
@@ -15,5 +17,5 @@ if($connection->connect_errno){
 else{
     echo "Success";
 }
-
 */
+?>

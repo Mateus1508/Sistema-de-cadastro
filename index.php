@@ -1,16 +1,17 @@
 <?php
 
+
 //Ação do botão 'inserir'
 if(isset($_POST['inserir'])){
-
+    
+include_once('RegrasNegocio.php');
 include_once('Config.php');
 
 $nome = $_POST['nome'];
-//$preco = $_POST['preco'];
 $cor = $_POST['cor'];
 
 //Inserir dados na tabela
-$result = mysqli_query($connection, "INSERT INTO produtos(NOME,COR) VALUES ('$nome','$cor')")
+$resultInsert = mysqli_query($connection, "INSERT INTO produtos(NOME,COR) VALUES ('$nome','$cor')")
 && mysqli_query($connection, "INSERT INTO preco(PRECO) VALUES ('$preco')");
 }
 
@@ -22,7 +23,7 @@ $result = mysqli_query($connection, "INSERT INTO produtos(NOME,COR) VALUES ('$no
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserir produtos</title>
-    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
